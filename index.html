@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>HMG Maintenance & Remodeling</title>
+
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+body{
+  font-family:Arial, Helvetica, sans-serif;
+  background:#ffffff;
+  color:#111;
+}
+
+a{
+  text-decoration:none;
+}
+
+.header{
+  background:#070707;
+  color:white;
+  padding:18px 7%;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  flex-wrap:wrap;
+}
+
+.logo{
+  width:235px;
+  max-width:100%;
+}
+
+.nav{
+  display:flex;
+  gap:28px;
+  flex-wrap:wrap;
+  align-items:center;
+  justify-content:center;
+}
+
+.nav a{
+  color:white;
+  font-weight:900;
+  font-size:15px;
+}
+
+.nav a:first-child{
+  color:#ffc107;
+}
+
+.header-right{
+  text-align:center;
+}
+
+.phone-top{
+  font-size:34px;
+  font-weight:900;
+  color:white;
+  margin-bottom:10px;
+}
+
+.whatsapp-btn{
+  display:inline-block;
+  background:#ffc107;
+  color:#111;
+  padding:14px 28px;
+  border-radius:7px;
+  font-weight:900;
+}
+
+.hero{
+  min-height:480px;
+  background:
+    linear-gradient(90deg, rgba(0,0,0,.95) 0%, rgba(0,0,0,.82) 38%, rgba(0,0,0,.35) 65%, rgba(0,0,0,.1) 100%),
+    url("https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?auto=format&fit=crop&w=1500&q=80");
+  background-size:cover;
+  background-position:center;
+  color:white;
+  display:flex;
+  align-items:center;
+  padding:60px 7%;
+}
+
+.hero-content{
+  max-width:520px;
+}
+
+.hero h1{
+  font-size:48px;
+  line-height:1.08;
+  font-weight:900;
+  margin-bottom:16px;
+}
+
+.gold{
+  color:#ffc107;
+}
+
+.hero p{
+  font-size:21px;
+  line-height:1.45;
+  margin-bottom:22px;
+}
+
+.hero h3{
+  font-size:21px;
+  font-weight:900;
+  margin-bottom:6px;
+}
+
+.area{
+  color:#ffc107;
+  font-size:22px;
+  font-weight:900;
+  margin-bottom:22px;
+}
+
+.btn-row{
+  display:flex;
+  gap:16px;
+  flex-wrap:wrap;
+}
+
+.btn{
+  display:inline-block;
+  padding:15px 22px;
+  border-radius:7px;
+  font-weight:900;
+  text-transform:uppercase;
+}
+
+.btn-call{
+  background:#ffc107;
+  color:#111;
+}
+
+.btn-outline{
+  border:2px solid #ffc107;
+  color:white;
+}
+
+.section{
+  padding:38px 7%;
+  text-align:center;
+}
+
+.section h2{
+  font-size:36px;
+  font-weight:900;
+  margin-bottom:10px;
+}
+
+.line{
+  width:80px;
+  height:4px;
+  background:#ffc107;
+  margin:0 auto 28px;
+}
+
+.services{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(125px,1fr));
+  gap:14px;
+}
+
+.service-card{
+  background:white;
+  padding:22px 10px;
+  border-radius:8px;
+  box-shadow:0 4px 16px rgba(0,0,0,.14);
+  font-weight:900;
+  min-height:135px;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+}
+
+.icon{
+  font-size:45px;
+  margin-bottom:12px;
+}
+
+.work{
+  background:#060606;
+  color:white;
+}
+
+.gallery{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
+  gap:18px;
+}
+
+.work-card img{
+  width:100%;
+  height:145px;
+  object-fit:cover;
+  border-radius:7px;
+  display:block;
+}
+
+.work-card h3{
+  color:white;
+  margin-top:12px;
+  font-size:16px;
+  font-weight:900;
+}
+
+.reviews{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:30px;
+  max-width:1100px;
+  margin:auto;
+}
+
+.review{
+  background:white;
+  padding:28px;
+  text-align:left;
+  border-radius:8px;
+  box-shadow:0 5px 18px rgba(0,0,0,.12);
+}
+
+.stars{
+  color:#ffc107;
+  text-align:center;
+  font-size:24px;
+  margin-bottom:14px;
+}
+
+.review p{
+  line-height:1.55;
+  margin-bottom:12px;
+}
+
+.contact-map{
+  display:grid;
+  grid-template-columns:1fr 1.6fr;
+  gap:25px;
+  max-width:1100px;
+  margin:35px auto 0;
+  align-items:stretch;
+}
+
+.contact-box{
+  background:#070707;
+  color:white;
+  padding:30px;
+  border-radius:8px;
+  text-align:left;
+}
+
+.contact-box h3{
+  color:#ffc107;
+  font-size:25px;
+  margin-bottom:18px;
+}
+
+.contact-box p{
+  font-size:18px;
+  margin:14px 0;
+}
+
+.map iframe{
+  width:100%;
+  height:100%;
+  min-height:255px;
+  border:0;
+  border-radius:8px;
+}
+
+.footer{
+  background:#070707;
+  color:white;
+  padding:25px 7%;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  flex-wrap:wrap;
+  gap:20px;
+  text-align:center;
+}
+
+.footer-logo{
+  width:115px;
+  background:white;
+  border-radius:8px;
+  padding:4px;
+}
+
+.follow h3{
+  color:#ffc107;
+  margin-bottom:8px;
+}
+
+.social{
+  font-size:28px;
+  letter-spacing:12px;
+}
+
+.float-whatsapp{
+  position:fixed;
+  right:18px;
+  bottom:18px;
+  background:#25d366;
+  color:white;
+  padding:14px 18px;
+  border-radius:50px;
+  font-weight:900;
+  box-shadow:0 6px 18px rgba(0,0,0,.3);
+  z-index:999;
+}
+
+@media(max-width:850px){
+  .header{
+    justify-content:center;
+    text-align:center;
+  }
+  .hero{
+    text-align:center;
+    justify-content:center;
+  }
+  .hero h1{
+    font-size:36px;
+  }
+  .phone-top{
+    font-size:26px;
+  }
+  .contact-map{
+    grid-template-columns:1fr;
+  }
+  .footer{
+    justify-content:center;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<header class="header">
+  <img src="logo.png" alt="HMG Maintenance & Remodeling Logo" class="logo">
+
+  <nav class="nav">
+    <a href="#">HOME</a>
+    <a href="#services">SERVICES</a>
+    <a href="#gallery">GALLERY</a>
+    <a href="#reviews">REVIEWS</a>
+    <a href="#about">ABOUT US</a>
+    <a href="#contact">CONTACT</a>
+  </nav>
+
+  <div class="header-right">
+    <div class="phone-top">☎ 850-586-9336</div>
+    <a class="whatsapp-btn" href="https://wa.me/18505869336">☘ WHATSAPP US</a>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="hero-content">
+    <h1>QUALITY WORK.<br><span class="gold">RELIABLE SERVICE.</span></h1>
+
+    <p>
+      Professional maintenance and remodeling services for homes,
+      vacation rentals, and hotels.
+    </p>
+
+    <h3>PROUDLY SERVING</h3>
+    <div class="area">FORT WALTON • DESTIN •<br>PANAMA CITY BEACH, FL</div>
+
+    <div class="btn-row">
+      <a href="tel:18505869336" class="btn btn-call">☎ CALL 850-586-9336</a>
+      <a href="https://wa.me/18505869336" class="btn btn-outline">☘ WHATSAPP US</a>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="services">
+  <h2>OUR SERVICES</h2>
+  <div class="line"></div>
+
+  <div class="services">
+    <div class="service-card"><div class="icon">🏠</div>HOME<br>MAINTENANCE</div>
+    <div class="service-card"><div class="icon">🌴</div>VACATION RENTAL<br>MAINTENANCE</div>
+    <div class="service-card"><div class="icon">🏨</div>HOTEL<br>MAINTENANCE</div>
+    <div class="service-card"><div class="icon">🎨</div>PAINTING</div>
+    <div class="service-card"><div class="icon">🚪</div>DRYWALL</div>
+    <div class="service-card"><div class="icon">🪵</div>FLOORING</div>
+    <div class="service-card"><div class="icon">🍽️</div>KITCHEN<br>REMODELING</div>
+    <div class="service-card"><div class="icon">🚿</div>BATHROOM<br>REMODELING</div>
+  </div>
+</section>
+
+<section class="section work" id="gallery">
+  <h2>OUR WORK</h2>
+  <div class="line"></div>
+
+  <div class="gallery">
+    <div class="work-card">
+      <img src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?auto=format&fit=crop&w=900&q=80" alt="Kitchen Remodeling">
+      <h3>KITCHEN REMODELING</h3>
+    </div>
+
+    <div class="work-card">
+      <img src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=900&q=80" alt="Bathroom Remodeling">
+      <h3>BATHROOM REMODELING</h3>
+    </div>
+
+    <div class="work-card">
+      <img src="https://images.unsplash.com/photo-1562259949-e8e7689d7828?auto=format&fit=crop&w=900&q=80" alt="Painting">
+      <h3>PAINTING</h3>
+    </div>
+
+    <div class="work-card">
+      <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=900&q=80" alt="Maintenance">
+      <h3>MAINTENANCE</h3>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="reviews">
+  <h2>WHAT OUR CLIENTS SAY</h2>
+  <div class="line"></div>
+
+  <div class="reviews">
+    <div class="review">
+      <div class="stars">★★★★★</div>
+      <p>HMG did an amazing job on our rental property. They are reliable, professional, and pay attention to every detail.</p>
+      <strong>– Sarah J.</strong>
+    </div>
+
+    <div class="review">
+      <div class="stars">★★★★★</div>
+      <p>Great communication and high quality work. We highly recommend HMG for any maintenance needs.</p>
+      <strong>– Michael T.</strong>
+    </div>
+
+    <div class="review">
+      <div class="stars">★★★★★</div>
+      <p>Fast, dependable, and very professional. Our go-to company for all of our maintenance needs!</p>
+      <strong>– Jessica L.</strong>
+    </div>
+  </div>
+
+  <div class="contact-map" id="contact">
+    <div class="contact-box">
+      <h3>CONTACT US</h3>
+      <p>☎ 850-586-9336</p>
+      <p>☘ 850-586-9336</p>
+      <p>✉ hmgmaintenanceremodeling@gmail.com</p>
+      <p>📍 Fort Walton • Destin • Panama City Beach, FL</p>
+    </div>
+
+    <div class="map">
+      <iframe
+        src="https://www.google.com/maps?q=Fort%20Walton%20Beach%20Destin%20Panama%20City%20Beach%20Florida&output=embed"
+        loading="lazy"
+        allowfullscreen>
+      </iframe>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <img src="logo.png" alt="HMG Logo" class="footer-logo">
+
+  <p>© 2026 HMG Maintenance & Remodeling.<br>All Rights Reserved.</p>
+
+  <div class="follow">
+    <h3>FOLLOW US</h3>
+    <div class="social">● ◎ G</div>
+  </div>
+</footer>
+
+<a href="https://wa.me/18505869336" class="float-whatsapp">WhatsApp</a>
+
+</body>
+</html>
